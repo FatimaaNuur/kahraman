@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kahraman Ekibine Katıl</title>
+    
+    <link rel="icon" type="image/png" href="image/Solo Leveling.png">
+
+<style>
+    body {
+    background: linear-gradient(135deg, #081a2b, #203a43, #2c5364);
+    margin: 0;
+    min-height: 100vh;
+}
+
+.panel {
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 70%;
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.vurgulu {
+    color: #03045e;
+}
+
+#formAlani {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#formAlani input,
+#formAlani textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+#formAlani label {
+    align-self: flex-start;
+    max-width: 400px;
+    width: 100%;
+}
+
+</style>
+
+</head>
+<body>
+
+    <div class="panel">
+
+        <div id="formAlani">
+            <h1 class="vurgulu">Kahraman Ekibine Katıl!</h1>
+            <p>
+                Sen de kahraman ekibimizin bir parçası olmak istiyorsan,
+                aşağıdaki formu doldurarak başvurunu gönderebilirsin.
+            </p>
+
+            <form onsubmit="hosgeldinEkrani(event)">
+                <label>İsim ve Soyisim:</label><br>
+                <input type="text" placeholder="Ad Soyad" required><br><br>
+
+                <label>Süper Kahraman Adı:</label><br>
+                <input type="text" placeholder="Kahraman Adın" required><br><br>
+
+                <label>En Sevdiğin Süper Güç:</label><br>
+                <input type="text" placeholder="Uçabilme vb." required><br><br>
+
+                <label>Başvuru Mesajı:</label><br>
+                <textarea placeholder="Mesajın" required></textarea><br><br>
+
+                <button type="submit">Başvuruyu Gönder</button>
+            </form>
+        </div>
+
+        <div id="hosgeldin" style="display:none;">
+            <h1>🎉 Ekibe Hoş Geldiniz! 🎉</h1>
+            <p>
+                Başvurunuz başarıyla alındı.  
+                Artık kahraman ekibimizin bir parçasısınız!
+            </p>
+        </div>
+
+        <script>
+            function hosgeldinEkrani(event) {
+                event.preventDefault();
+                document.getElementById("formAlani").style.display = "none";
+                document.getElementById("hosgeldin").style.display = "block";
+            }
+        </script>
+
+    </div>
+
+</body>
+</html>
